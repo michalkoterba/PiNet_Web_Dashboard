@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  pinet-web-dashboard:
+    # Build the Docker image from the Dockerfile in the current directory
+    build: .
+    container_name: pinet-web-dashboard
+    restart: unless-stopped
+
+    # Load environment variables from the .env file
+    env_file:
+      - .env
+
+    # Map port 80 on the host to port 8000 in the container
+    ports:
+      - "80:8000"
+
+    # Mount the data directory as a volume to persist the hosts.json file
+    volumes:
+      - ./data:/app/data
+
+    # Optional: Set a hostname for the container
+    hostname: pinet-web-dashboard

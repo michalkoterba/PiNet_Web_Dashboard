@@ -13,3 +13,5 @@ env/
 # IDEs
 .idea/
 .vscode/
+/PiNet Web Dashboard.iml
+/data/hosts.json

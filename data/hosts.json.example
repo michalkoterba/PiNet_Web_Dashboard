@@ -1,0 +1,16 @@
+{
+  "hosts": [
+    {
+      "Name": "Example PC 1",
+      "IP": "192.168.1.10",
+      "MAC": "AA:BB:CC:DD:EE:FF",
+      "Owner": "User A"
+    },
+    {
+      "Name": "Example Server",
+      "IP": "192.168.1.20",
+      "MAC": "11:22:33:44:55:66",
+      "Owner": "Admin"
+    }
+  ]
+}

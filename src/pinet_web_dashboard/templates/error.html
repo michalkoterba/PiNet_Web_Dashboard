@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error</title>
+    <title>PiNet Dashboard - Error</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>An Error Occurred</h1>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">PiNet Web Dashboard</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">An Unexpected Error Occurred</h4>
+            <p>The application encountered a problem and could not continue. Please see the details below.</p>
+            <hr>
+            <p class="mb-0"><strong>Error details:</strong> {{ error_message }}</p>
+        </div>
+        <a href="/" class="btn btn-primary">Go to Dashboard</a>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

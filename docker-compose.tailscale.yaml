@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  pinet-web-dashboard:
+    build: .
+    container_name: pinet-web-dashboard
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    # Join the network of the tailscale service
+    # This is the key to exposing the app via the sidecar
+    network_mode: "service:tailscale"
+
+  # Tailscale sidecar container
+  tailscale:
+    image: tailscale/tailscale:latest
+    container_name: pinet-dashboard-tailscale
+    hostname: pinet-web-dashboard # This will be the machine name in your Tailnet
+    environment:
+      # Get the auth key from your .env file
+      - TS_AUTHKEY=${TS_AUTHKEY}
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS_SOCKET=/var/run/tailscale/tailscaled.sock
+      - TS_USERSPACE=true
+      - TS_ACCEPT_DNS=true
+      # Optional: Advertise this service as tagged for ACLs
+      # - TS_EXTRA_ARGS=--advertise-tags=tag:dashboard
+    volumes:
+      # Persist Tailscale state across container restarts
+      - tailscale-state:/var/lib/tailscale
+      # Required for Tailscale to work
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    restart: unless-stopped
+
+# Define a named volume for persisting the Tailscale state
+volumes:
+  tailscale-state:

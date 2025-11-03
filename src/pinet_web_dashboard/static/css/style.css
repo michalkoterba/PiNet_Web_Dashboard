@@ -1,1 +1,39 @@
 /* Custom CSS for PiNet Web Dashboard */
+
+.status-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.status-indicator.online {
+    background-color: #28a745; /* Green */
+}
+
+.status-indicator.offline {
+    background-color: #dc3545; /* Red */
+}
+
+.status-indicator.checking {
+    background-color: #ffc107; /* Yellow */
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.host-card .card-title {
+    font-weight: bold;
+}

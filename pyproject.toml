@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pinet-web-dashboard"
+version = "0.1.0"
+authors = [
+  { name="Michael K.", email="your@email.com" },
+]
+description = "A web dashboard to monitor and wake network hosts via PiNet API."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Framework :: Flask",
+    "Operating System :: OS Independent",
+]
+# Dependencies are now managed here and can be read by pip
+dependencies = [
+    "flask",
+    "python-dotenv",
+    "requests",
+    "gunicorn",
+]
+
+[tool.setuptools.packages.find]
+# This tells setuptools to look for packages in the 'src' directory
+where = ["src"]
