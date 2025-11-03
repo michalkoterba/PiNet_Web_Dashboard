@@ -1,0 +1,28 @@
+{
+  "hosts": [
+    {
+      "Name": "Server",
+      "IP": "192.168.0.40",
+      "MAC": "D8-50-E6-47-F1-48",
+      "Owner": null
+    },
+    {
+      "Name": "MINIPC-MK",
+      "IP": "192.168.0.140",
+      "MAC": "58-47-CA-71-F3-40",
+      "Owner": "Michal"
+    },
+    {
+      "Name": "MINIPC-MARIA",
+      "IP": "192.168.0.172",
+      "MAC": "68-1D-EF-45-7B-54",
+      "Owner": "Maria"
+    },
+    {
+      "Name": "MINIPC-DB",
+      "IP": "192.168.0.109",
+      "MAC": "68-1D-EF-3F-BF-2D",
+      "Owner": "Iwona"
+    }
+  ]
+}
