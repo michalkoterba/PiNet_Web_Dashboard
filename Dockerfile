@@ -15,10 +15,10 @@ RUN pip install --no-cache-dir -e .
 # 3. Copy the data directory
 COPY data/ /app/data/
 
-# Make port 8000 available inside the container
+# Make port 80 available inside the container
 # This does not publish the port to the host, but documents the intent.
-EXPOSE 8000
+EXPOSE 80
 
 # Run the application using Gunicorn on internal port 8000
 # This command is the entry point for the container.
-CMD ["gunicorn", "--workers", "4", "--bind", "0.0.0.0:8000", "pinet_web_dashboard.main:app"]
+CMD ["gunicorn", "--workers", "4", "--bind", "0.0.0.0:80", "pinet_web_dashboard.main:app"]
