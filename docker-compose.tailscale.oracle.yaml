@@ -21,7 +21,8 @@ services:
       - TS_AUTHKEY=${TS_AUTHKEY}
       - TS_STATE_DIR=/var/lib/tailscale
       - TS_SOCKET=/var/run/tailscale/tailscaled.sock
-      - TS_USERSPACE=true
+      - TS_USERSPACE=false
+      - TS_ACCEPT_ROUTES=true
       - TS_ACCEPT_DNS=true
       # Optional: Advertise this service as tagged for ACLs
       # - TS_EXTRA_ARGS=--advertise-tags=tag:dashboard
